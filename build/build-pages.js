@@ -20,7 +20,8 @@ function capitalizeFirstLetter(string) {
     for(const file of files) {
 
       const iconBasename = path.basename(file, path.extname(file))
-      const iconTitle = capitalizeFirstLetter(iconBasename)
+      const iconTitleCap = capitalizeFirstLetter(iconBasename)
+      const iconTitle = iconTitleCap.split("-").join(" ")
       const pageName = path.join(pagesDir, iconBasename + '.md')
 
       let pageTemplate = `---
